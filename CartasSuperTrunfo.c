@@ -19,6 +19,7 @@ int main() {
     float Area = 0.0;
     float PIB = 0.0;
     int NumPontosTuristicos = 0;
+    float DesidadePopulacional, PIBPerCapta;
     
     // Cadastro das Cartas:
     //Daniel: Estou programando a área de cadastro das Cartas.
@@ -41,7 +42,7 @@ int main() {
     
     //Registrar População:
     printf("\n\nAgora quanto é o número populacional da cidade %s? - %s \n", CodigoCarta, NomeCidade);
-    scanf("%f", &Populacao);
+    scanf(" %f", &Populacao);
 
     //Registrar Área:
     printf("\n\nQual a Área da Cidade %s?\n", NomeCidade);
@@ -55,24 +56,33 @@ int main() {
     printf("\n\nQuantos pontos turísticos %s possui?\n", NomeCidade);
     scanf(" %d", &NumPontosTuristicos);
 
+    DesidadePopulacional = (float) Populacao / Area;
+    PIBPerCapta = (float) PIB / Populacao;
+
     //Daniel: Agora irei exibir os reesultados
     printf("\n\nID: %s \n", CodigoCarta);
     printf("País: %s\n", Pais);
     printf("Estado: %c\n", Estado);
     printf("Cidade: %s\n", NomeCidade);
-    printf("População: %f\n", Populacao);
-    printf("Área: %fKm\n", Area);
-    printf("PIB: %f\n", PIB);
+    printf("População: %.2f\n", Populacao);
+    printf("Área: %.2fKm²\n", Area);
+    printf("Densidade Populacional: %.2f\n", DesidadePopulacional);
+    printf("PIB per Capita: %.2f\n", PIBPerCapta);
+    printf("PIB: %.2f\n", PIB);
     printf("Pontos Turísticos: %d\n\n\n", NumPontosTuristicos);
-   
+    
+    
+
     /*Daniel: Resultado exibido no Terminal:
     ID: A1 
     País: Brasil
     Estado: A
     Cidade: Santana
-    População: 733.758972
-    Área: 470.761993Km
-    PIB: 18.500000
+    População: 750345.00
+    Área: 450983.00Km²
+    Densidade Populacional: 1.66
+    PIB per Capita: 26.65
+    PIB: 20000344.00
     Pontos Turísticos: 8
     */
 
